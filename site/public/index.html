@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Style01.css" />
+  <link rel="shortcut icon" type="imagex/png" href="../assets/Imagens/uvasensor.ico">
+  <title>HOME | PurpleTech</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../assets/Imagens/logo.png" style="height: 70px; width: 80px; margin: 2px" class="logo" alt="logo" onclick="home()" href="../public/index.html">
+    <nav class="menu">
+      <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="login.html">Login</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="cadastro.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="faleConosco.html">Fale Conosco</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="sobreNos.html">Sobre nós</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="simulador.html" class="button01">SIMULADOR</a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <main>
+      <section class="module parallax imagemHome1">
+
+        <h1>Tradição & Tecnologia</h1>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <h2>Conheça os nossos serviços</h2>
+            <p>Nós fornecemos um serviço de monitoramento de umidade e temperatura de sua vinícola ou adega
+              climatizada.<mark> Podendo ser acessado de qualquer computador em qualquer lugar!</mark> <br><br>
+              Além disso, caso as algo saia do controle, garantimos que através de nosso sistema de alertas, <mark>o
+              avisaremos prontamente sobre a situação</mark>, para que uma solução seja tomada, preservando a qualidade
+              de seu vinho.</p>
+            
+            <p>Nós fornecemos um serviço de monitoramento de umidade e temperatura de sua vinícola ou adega climatizada.<mark> Podendo ser acessado de qualquer computador em qualquer lugar!</mark> <br><br>
+              Além disso, caso as algo saia do controle, garantimos que através de nosso sistema de alertas, <mark>o avisaremos prontamente sobre a situação</mark>, para que uma solução seja tomada, preservando a qualidade de seu vinho.</p>
+            
+
+            <br><br>
+            <button class="button" onclick="sobre()">Saiba Mais</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="module parallax imagemHome2">
+
+        <h1>Simulador Financeiro</h1>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <h2>Simule as vantagens do investimento</h2>
+            <p>Nós fornecemos um serviço de monitoramento de umidade e temperatura de sua vinícola ou adega
+              climatizada.<mark>Podendo ser acessado de qualquer computador em qualquer lugar!</mark> Além disso, caso as
+              algo saia do controle, garantimos que através de nosso sistema de alertas, <mark>o avisaremos prontamente
+              sobre a situação</mark>, para que uma solução seja tomada, preservando a qualidade de seu vinho.</p>
+            
+              <p>Nós fornecemos um serviço de monitoramento de umidade e temperatura de sua vinícola ou adega climatizada.<mark>Podendo ser acessado de qualquer computador em qualquer lugar!</mark> Além disso, caso as algo saia do controle, garantimos que através de nosso sistema de alertas, <mark>o avisaremos prontamente sobre a situação</mark>, para que uma solução seja tomada, preservando a qualidade de seu vinho.</p>
+            
+            <br><br>
+            <button class="button" onclick="simulador()">Simulador</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="module parallax imagemHome3">
+        <h1>Tipos de Vinho</h1>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <div class="caixaDeTexto1">
+            <h2>Conheça as características de cada tipo de vinho</h2>
+            <p>Deixe de perder! Por meio do nosso simulador financeiro, é possível conferir se a forma como armazena seus
+              vinhos atualmente está correta, <mark>tal quanto você irá deixar de perder</mark> em sua safra por problemas
+              com umidade e temperatura no seu armazém.</p>
+            
+
+            <h2>Conheça as carácteristicas de cada tipo de vinho</h2>
+            <p>Deixe de perder! Por meio do nosso simulador financeiro, é possível conferir se a forma como armazena seus vinhos atualmente está correta, <mark>tal quanto você irá deixar de perder</mark> em sua safra por problemas com umidade e temperatura no seu armazém.
+            </p>
+            
+            <br><br>
+            <button class="button" id="abrir">Tipos de Vinho</button><br>
+            <div id="modal_container" class="modal_container">
+              <div class="modal">
+                <h1>Selecione o tipo de vinho</h1>
+                <h2></h2>
+                <p>
+                  <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
+                    <option value="selSel">Selecione o tipo de vinho</option>
+                    <option value="vinhoTinto.html">Vinho Tinto</option>
+                    <option value="vinhoBranco.html">Vinho Branco</option>
+                    <option value="vinhoVerde.html">Vinho Verde</option>
+                    <option value="vinhoRose.html">Vinho Rose</option>
+                    <option value="espumantes.html">Espumantes</option>
+                  </select>
+                </p>
+                <button class="button" id="direcionar">
+                  Direcionar
+                </button>
+                <button class="button02" id="fechar">X</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+  <footer>
+    <div class="caixaDeTexto">
+      <p>PURPLE TECH - Todos os direitos reservados - 2022</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+<script>
+  const abrir = document.getElementById('abrir');
+  const modal_container = document.getElementById('modal_container');
+  const fechar = document.getElementById('fechar');
+
+  abrir.addEventListener('click', () => {
+    modal_container.classList.add('show');
+  });
+
+  fechar.addEventListener('click', () => {
+    modal_container.classList.remove('show');
+  });
+</script>
+<script>
+  function simulador() {
+    window.location.href = "simulador.html"
+  }
+</script>
+<script>
+  function sobre() {
+    window.location.href = "sobreNos.html"
+  }
+</script>
+<script>
+  function home() {
+    window.location.href = "index.html"
+  }
+</script>

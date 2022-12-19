@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+    <link href="Style02.css" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="../assets/Imagens/uvasensor.png">
+    <title> ESPUMANTES | PurpleTech </title> 
+</head>
+
+<body>
+
+    <header>
+        <img src="../assets/Imagens/logo.png" style="height: 70px; width: 80px; margin: 2px" class="logo" alt="logo" onclick="home()" href="../public/index.html">
+        <nav class="menu">
+            <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="login.html">Login</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="cadastro.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="faleConosco.html">Fale Conosco</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="sobreNos.html">Sobre nós</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="simulador.html" class="button01">SIMULADOR</a>
+        </nav>
+    </header>
+
+    <section class="sobre">
+        <div class="extras" style="background-color: #BBC56D;">
+            <img class="correction" src="../assets/Imagens/vinhoEndrizzo.png">
+        </div>
+        <div class="centerVinho">
+            <div class="textoVinho">
+                <h1>
+                    <span
+                        style="color: #BBC56D; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Festivo
+                        e renovador</span><br>Assim como a vida deve ser
+                </h1>
+                <p>
+                    Os espumantes, que caracterizam-se pela sua gaseificação, trás um tom festivo para os mais diversos
+                    momentos. <mark class="mark01">Sua popularidade ao redor do mundo é inegável</mark>, abrangendo
+                    desde os champagnes franceses,
+                    os lambruscos italianos e os cava, espanhóis, entre outros diversos.
+                </p>
+                <p>
+                    Atualmente, a maior parte dos espumantes produzidos em todo o mundo concentra-se em alguns países,
+                    sendo eles: França, Itália, EUA, Portugal e Espanha, considerando os números referentes a 2020.
+                    <mark class="mark01">Sua
+                        temperatura ideal de armazenamento é entre 14ºC e 20ºC, de 2 a 14 anos.</mark>
+                </p>
+                <button onclick="home()" class="button03"
+                    style="background-color: #BBC56D; box-shadow: 0 0 0 0px white, 0 0 0 2px #BBC56D, 0 2px 4px rgba(0,0,0,0.2);">
+                    Voltar
+                </button>&nbsp;&nbsp;&nbsp;
+                <button class="button03"
+                    style="background-color: #BBC56D; box-shadow: 0 0 0 0px white, 0 0 0 2px #BBC56D, 0 2px 4px rgba(0,0,0,0.2);"
+                    id="abrir">
+                    Tipos de Vinho
+                </button>
+                <br>
+                <div id="modal_container" class="modal_container">
+                    <div class="modal">
+                        <h2>Selecione o tipo de vinho</h2>
+                        <h2></h2>
+                        <p>
+                            <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
+                                <option value="selSel">Selecione o tipo de vinho</option>
+                                <option value="vinhoTinto.html">Vinho Tinto</option>
+                                <option value="vinhoBranco.html">Vinho Branco</option>
+                                <option value="vinhoVerde.html">Vinho Verde</option>
+                                <option value="vinhoRose.html">Vinho Rose</option>
+                                <option value="espumantes.html">Espumantes</option>
+                            </select>
+                        </p>
+                        <button class="button02" id="fechar">X</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="caixaDeTexto">
+            <br>
+            <p>PURPLE TECH - Todos os direitos reservados - 2022</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    const abrir = document.getElementById('abrir');
+    const modal_container = document.getElementById('modal_container');
+    const fechar = document.getElementById('fechar');
+
+    abrir.addEventListener('click', () => {
+        modal_container.classList.add('show');
+    });
+
+    fechar.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+</script>
+<script>
+    function home() {
+        window.location.href = "index.html"
+    }
+</script>

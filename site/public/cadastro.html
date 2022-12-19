@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Style01.css" />
+  <link rel="shortcut icon" type="imagex/png" href="../assets/Imagens/uvasensor.ico">
+  <title>CADASTRO | PurpleTech</title>
+</head>
+ 
+<body>
+
+  <header>
+    <img src="../assets/Imagens/logo.png" style="height: 70px; width: 80px; margin: 2px" class="logo" alt="logo" onclick="home()" href="../public/index.html">
+    <nav class="menu">
+      <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="login.html">Login</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="cadastro.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="faleConosco.html">Fale Conosco</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="sobreNos.html">Sobre nós</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="simulador.html" class="button01">SIMULADOR</a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <main>
+      <div class="fundoGradianteCadastro"> <br><br>
+        <h1 style="color: white;">CADASTRO | PurpleTech</h1> <br>
+        <div class="fundoBrancoCadastro" id="div_cadastro" style="display: block;">
+          <!-- div1 cadastro empresa -->
+          <p>
+            <span class="spanNegrito">Digite o CNPJ</span><br><br>
+            <input class="input01" placeholder="Ex: 01.222.111/0001-11" id="i_cnpj1">
+          </p>
+
+          <p>
+            <span class="spanNegrito">Digite o nome da sua Empresa</span><br><br>
+            <input class="input01" placeholder="Ex: Magazine do Vinho" id="i_nome">
+          </p>
+
+          <p>
+            <span class="spanNegrito">Digite o CEP</span><br><br>
+            <input class="input01" placeholder="Ex: 05190-190" id="i_cep" maxlength="9"> <br> <br>
+            <button id="botaocadastro" class="botaocadastro" onclick="avancar()">Avançar</button>
+          </p>
+        </div>
+
+        <!-- div2 cadastroFunc -->
+        <div class="fundoBrancoCadastro" id="div_cadastro1" style="display: none;">
+
+          <!-- Mexida7-Michelly adicionei o cnpj na pagina de cadastro do usuario-->
+          <p>
+            <span class="spanNegrito">Digite o CNPJ</span><br><br>
+            <input class="input01" placeholder="Ex: 01.222.111/0001-11" id="i_cnpj">
+          </p>
+
+          <p>
+            <span class="spanNegrito">Digite o Email</span><br><br>
+            <input class="input01" placeholder="Ex: comercial.adega@gmail.com" id="i_email">
+          </p>
+
+          <p>
+            <span class="spanNegrito">Digite o Telefone</span><br><br>
+            <input class="input01" placeholder="Ex: (11)4471-4472" id="i_telefone" maxlength="14">
+          </p>
+
+          <p>
+            <span class="spanNegrito">Digite sua Senha</span><br><br>
+            <input class="input01" type="password" placeholder="********" id="i_senha">
+          </p>
+
+          <p>
+            <span class="spanNegrito">Confirme Senha</span><br><br>
+            <input class="input01" type="password" placeholder="********" id="i_confirma">
+          </p>
+
+          <span class="spanNegrito">Tipo de Usuário</span><br><br>
+          <select id="sel_tipo">
+            <option value="0">Selecione</option>
+            <option value="Admin">Administrador</option>
+            <option value="Func">Funcionário</option>
+          </select>
+
+          <br> <br> <br>
+
+          <button class="button" onclick="cadastrar()">Cadastrar</button><br><br>
+        </div>
+
+        <div class="vetor">
+          <img class="imagemvetor" src="../assets/Imagens/cadastro.png">
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <div class="caixaDeTexto">
+      <p>PURPLE TECH - Todos os direitos reservados - 2022</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
+
+<script>
+
+  /* Mexida5-Michelly acertei o nome e arrumei as var*/
+  function avancar() {
+
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = i_nome.value;
+    var cnpjVar = i_cnpj1.value;
+    var cepVar = i_cep.value;
+
+
+
+
+    if (nomeVar == "" || cnpjVar == "" || cepVar == "") {
+      alert(`Preencha todos os campos para prosseguir!`)
+    }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/avancar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        /* Mexida6-Michelly acertei o nome, tirando os da acquatec e arrumei as var*/
+        nomeServer: nomeVar,
+        cnpjServer: cnpjVar,
+        cepServer: cepVar,
+
+      })
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+
+      
+
+      if (resposta.ok) {
+        div_cadastro1.style.display = "block"
+        div_cadastro.style.display = "none"
+      } else {
+        throw ("Houve um erro ao tentar realizar o cadastro!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+    return false;
+  }
+
+
+
+
+  function cadastrar() {
+  console.log ("entrei na função")
+
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var cnpjVar = i_cnpj.value;
+    var emailVar = i_email.value;
+    var telVar = i_telefone.value;
+    var senhaVar = i_senha.value;
+    var confirmaVar = i_confirma.value;
+    var funcVar = sel_tipo.value;
+
+
+    if (cnpjVar == "" || emailVar == "" || telVar == "" || senhaVar == "" || confirmaVar == "" || funcVar == "0") {
+
+      alert(`Preencha todos os campos para prosseguir!`)
+
+    }
+
+    console.log("INICIANDO O FETCH");
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        cnpjServer: cnpjVar,
+        emailServer: emailVar,
+        telServer: telVar,
+        senhaServer: senhaVar,
+        funcServer: funcVar,
+      })
+    }).then(function (resposta) {
+      console.log ("entrei no fetch");
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+        window.location.href = "login.html"
+      } else {
+        throw ("Houve um erro ao tentar realizar o cadastro!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+
+    });
+
+    return false;
+  }
+
+
+
+</script>

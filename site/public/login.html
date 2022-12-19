@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style01.css" />
+    <link rel="shortcut icon" type="imagex/png" href="../assets/Imagens/uvasensor.png">
+    <title>LOGIN | PurpleTech</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="../assets/Imagens/logo.png" style="height: 70px; width: 80px; margin: 2px" class="logo" alt="logo" onclick="home()" href="../public/index.html">
+        <nav class="menu">
+            <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="login.html">Login</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="cadastro.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="faleConosco.html">Fale Conosco</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="sobreNos.html">Sobre nós</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="simulador.html" class="button01">SIMULADOR</a>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <main>
+            <div class="fundoGradiante">
+                <h1 style="color: white;">LOGIN | PurpleTech</h1> <br>
+                <div class="fundoBranco">
+                    <p>
+                        <span class="spanNegrito">Digite seu E-mail</span><br><br>
+                        <input class="input01" placeholder="E-mail:" id="i_email">
+                    </p>
+                    <p>
+                        <span class="spanNegrito">Digite sua Senha</span><br><br>
+                        <input class="input01" type="password" placeholder="********" id="i_senha">
+                    </p>
+                    <button class="button" onclick="Acesso()">Entrar</button>
+                </div>
+                <div class="vetor">
+                    <img class="imagemvetorlogin" src="../assets/Imagens/login.png">
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="caixaDeTexto">
+            <p>PURPLE TECH - Todos os direitos reservados - 2022</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script>
+    function Acesso() {
+        var Email = i_email.value
+        var Pass = Number(i_senha.value)
+
+        if (Email == Email && Pass == Pass) {
+            alert('AUTENTICADO COM SUCESSO!')
+            window.location.href = "../dashboard/dashboard.html";
+        } else {
+            alert('FALHA NA AUTENTICAÇÃO, VERIFICAR E-MAIL E SENHA!')
+        }
+    }
+</script>

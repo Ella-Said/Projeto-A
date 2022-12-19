@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+    <link href="Style02.css" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="../assets/Imagens/uvasensor.png">
+    <title>VINHO TINTO | PurpleTech</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="../assets/Imagens/logo.png" style="height: 70px; width: 80px; margin: 2px" class="logo" alt="logo" onclick="home()" href="../public/index.html">
+        <nav class="menu">
+            <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="login.html">Login</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="cadastro.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="faleConosco.html">Fale Conosco</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="sobreNos.html">Sobre nós</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="simulador.html" class="button01">SIMULADOR</a>
+        </nav>
+    </header>
+    <section class="sobre">
+        <div class="extras" style="background-color: #7d41b9;">
+            <img class="correction" src="../assets/Imagens/vinhoQuintaPedraAlta.png">
+        </div>
+        <div class="centerVinho">
+            <div class="textoVinho">
+                <h1>
+                    <span
+                        style="color: #7d41b9; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Tradicional
+                        e harmonioso</span><br>Assim como a vida deve ser
+                </h1>
+                <p>
+                    O vinho tinto, por ser um vinho encorpado, é o preferido dos brasileiros, com 55% da preferência.
+                    <mark class="mark04">No caso do vinho tinto, o tipo preferido dos brasileiros são os da uva Malbec,
+                        originária da França e com quase 59% do plantio mundial.</mark> Em sequência seguem os tipos
+                    Cabernet Sauvignon e Merlot, respectivamente.
+                </p>
+                <p>
+                    <mark class="mark04">A Argentina, o Chile e Uruguai lideram o produção do produto na América Latina,
+                        seguidos pelo
+                        Brasil, nesse ranking.</mark> Fora do contexto latino, a Alemanha, conhecida pelas duas
+                    cervejas, a África
+                    do Sul, com seu clima propêncio ao plantio tal como a Austrália, são países com produções relevantes
+                    no mercado.
+                </p>
+                <p>
+                    Atualmente, três países produzem cerca da metade do vinho tinto produzido em todo o mundo: Itália,
+                    França e Espanha e, que somam 53% da produção mundial, considerando os números referentes a 2020. Se
+                    levarmos em consideração toda a União Europeia, este número chega a 63% da quantidade de vinhos
+                    feitos em todo o mundo. <mark class="mark04">Sua temperatura ideal de armazenamento é entre 13ºC e
+                        17ºC, levando ao menos 3 anos para atingir seu potencial.</mark>
+                </p>
+                <button onclick="home()" class="button03"
+                    style="background-color: #7d41b9; box-shadow: 0 0 0 0px white, 0 0 0 2px #7d41b9, 0 2px 4px rgba(0,0,0,0.2);">
+                    Voltar
+                </button>&nbsp;&nbsp;&nbsp;
+                <button class="button03"
+                    style="background-color: #7d41b9; box-shadow: 0 0 0 0px white, 0 0 0 2px #7d41b9, 0 2px 4px rgba(0,0,0,0.2);"
+                    id="abrir">
+                    Tipos de Vinho
+                </button>
+                <br>
+                <div id="modal_container" class="modal_container">
+                    <div class="modal">
+                        <h2>Selecione o tipo de vinho</h2>
+                        <h2></h2>
+                        <p>
+                            <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
+                                <option value="selSel">Selecione o tipo de vinho</option>
+                                <option value="vinhoTinto.html">Vinho Tinto</option>
+                                <option value="vinhoBranco.html">Vinho Branco</option>
+                                <option value="vinhoVerde.html">Vinho Verde</option>
+                                <option value="vinhoRose.html">Vinho Rose</option>
+                                <option value="espumantes.html">Espumantes</option>
+                            </select>
+                        </p>
+
+                        <button class="button02" id="fechar">X</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="caixaDeTexto">
+            <br>
+            <p>PURPLE TECH - Todos os direitos reservados - 2022</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    const abrir = document.getElementById('abrir');
+    const modal_container = document.getElementById('modal_container');
+    const fechar = document.getElementById('fechar');
+
+    abrir.addEventListener('click', () => {
+        modal_container.classList.add('show');
+    });
+
+    fechar.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+</script>
+<script>
+    function home() {
+        window.location.href = "index.html"
+    }
+</script>

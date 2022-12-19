@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Style01.css" />
+  <link rel="shortcut icon" type="imagex/png" href="../assets/Imagens/uvasensor.png">
+  <title>FALE CONOSCO | PurpleTech</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../assets/Imagens/logo.png" style="height: 70px; width: 80px; margin: 2px" class="logo" alt="logo" onclick="home()" href="../public/index.html">
+    <nav class="menu">
+      <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="login.html">Login</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="cadastro.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="faleConosco.html">Fale Conosco</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="sobreNos.html">Sobre nós</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="simulador.html" class="button01">SIMULADOR</a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <main>
+      <section class="module parallax imagemHome5">
+        <br><br><br><br><br><br><br><br><br>
+
+        <h1>FALE CONOSCO | PurpleTech</h1>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <div class="caixaDeTexto">
+            <h2>FALE CONOSCO | PurpleTech</h2>
+            <p id="info">
+              Ficou com alguma dúvida sobre nossos serviços ou plataforma? Envie agora sua sugestão, critíca ou
+              opinião e teremos o maior prazer em atende-los!
+            </p>
+            <p>
+              <span class="spanNegrito">Nome:</span><br>
+              <input class="input02" placeholder="Digite seu nome" id="i_nome" maxlength="30">
+            </p>
+
+            <p>
+              <span class="spanNegrito">E-mail</span><br>
+              <input class="input02" placeholder="Digite e-mail" id="i_email" maxlength="20">
+            </p>
+
+            <p>
+              <span class="spanNegrito">Titulo</span><br>
+              <input class="input02" placeholder="Digite o titulo" id="i_tema" maxlength="50">
+            </p>
+
+            <p>
+              <span class="spanNegrito">Assunto</span><br>
+              <select class="select" id="sel_opcao">
+                <option value="0">Selecione</option>
+                <option value="1">Dúvida</option>
+                <option value="2">Sugestão</option>
+                <option value="3">Opinião</option>
+                <option value="4">Crítica</option>
+              </select>
+            </p>
+
+            <p>
+              <span class="spanNegrito">Descrição</span><br>
+              <textarea class="select" id="i_desc" cols="32" row="10" maxlength="100"></textarea>
+            </p>
+            <div id="mostrar"></div>
+            <button class="button" onclick="enviar()">Enviar</button>
+
+            <div id="modal_container" class="modal_container">
+              <div class="modal">
+                <h1>Atenção</h1>
+                <p>
+                  Preencha todos os campos antes de enviar o formulário.
+                </p>
+                <button class="button02" id="fechar">X</button>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+      </section>
+
+      <footer>
+        <div class="caixaDeTexto">
+          <p>PURPLE TECH - Todos os direitos reservados - 2022</p>
+        </div>
+      </footer>
+
+  </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+
+  const abrir = document.getElementById('abrir');
+  const modal_container = document.getElementById('modal_container');
+  const fechar = document.getElementById('fechar');
+
+  abrir.addEventListener('click', () => {
+    modal_container.classList.add('show');
+  });
+
+  fechar.addEventListener('click', () => {
+    modal_container.classList.remove('show');
+  });
+
+</script>
+<script>
+
+  function enviar() {
+
+    var name = i_nome.value
+    var email = i_email.value
+    var title = i_tema.value
+    var describe = i_desc.value
+
+    if (name == "" || email == "" || title == "" || describe == "") {
+      alert(`Preencha todos os campos!`)
+
+    } else {
+      mostrar.innerHTML = `Enviado com Sucesso!<br>`
+      mostrar.innerHTML = `
+      Entraremos em contato dentro de 24 horas!<br>
+      Fique atento ao seu e-mail.<br>
+      Att, <br>
+      Equipe PURPLE TECH.
+      `
+    }
+
+
+  }
+</script>

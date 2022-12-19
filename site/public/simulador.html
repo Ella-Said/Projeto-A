@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Style01.css" />
+  <link rel="shortcut icon" type="imagex/png" href="../assets/Imagens/uvasensor.png">
+
+  <title>SIMULADOR FINANCEIRO | PurpleTech</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../assets/Imagens/logo.png" style="height: 70px; width: 80px; margin: 2px" class="logo" alt="logo" onclick="home()" href="../public/index.html">
+    <nav class="menu">
+      <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="login.html">Login</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="cadastro.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="faleConosco.html">Fale Conosco</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="sobreNos.html">Sobre nós</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+      <a href="simulador.html" class="button01">SIMULADOR</a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <main>
+      <section class="module parallax imagemHome4">
+        <h1>SIMULADOR FINANCEIRO | PurpleTech</h1>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <div class="caixaDeTexto01">
+            <div class="caixaDeTexto">
+              <h2>SIMULADOR FINANCEIRO | PurpleTech</h2>
+              <p>
+                <span class="spanNegrito">Selecione o tipo de vinho produzido</span><br><br>
+                <select class="select" id="sel_tipoDeVinho">
+                  <option value="selSel">Selecione o tipo de vinho</option>
+                  <option value="vinhoTinto">Vinho Tinto</option>
+                  <option value="vinhoBranco">Vinho Branco</option>
+                  <option value="vinhoVerde">Vinho Verde</option>
+                  <option value="vinhoRose">Vinho Rose</option>
+                  <option value="espumantes">Espumantes</option>
+                </select>
+              </p>
+              <p>
+                <span class="spanNegrito">Temperatura média de armazenamento</span><br><br>
+                <input class="input02" id="in_temperatura" placeholder="Ex: 15">
+              </p>
+              <p>
+                <span class="spanNegrito">Anos de envelhecimento</span><br><br>
+                <input class="input02" id="in_envelhecimento" placeholder="Ex: 7">
+              </p>
+              <p>
+                <span class="spanNegrito">Safra anual de vinho armazenado (em garrafas)</span><br><br>
+                <input class="input02" id="in_safra" placeholder="Ex: 200">
+              </p>
+              <p>
+                <span class="spanNegrito">Perda anual de vinho armazenado (em garrafas)</span><br><br>
+                <input class="input02" id="in_perda" placeholder="Ex: 200">
+              </p>
+              <button class="button01" id="abrir" onclick="calculate()">Calcular perda</button><br><br>
+              <div id="modal_container" class="modal_container">
+                <div class="modal">
+                  <h1>Sobre a sua vinícola:</h1>
+                  <p>
+                  <div id="div_perda"></div>
+                  </p>
+                  <button class="button02" id="fechar">X</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>
+  </div>
+  </section>
+  </main>
+  </div>
+  <footer>
+    <div class="caixaDeTexto">
+      <p>PURPLE TECH - Todos os direitos reservados - 2022</p>
+    </div>
+  </footer>
+  </div>
+
+</body>
+
+</html>
+<script>
+  const abrir = document.getElementById('abrir');
+  const modal_container = document.getElementById('modal_container');
+  const fechar = document.getElementById('fechar');
+
+  abrir.addEventListener('click', () => {
+    modal_container.classList.add('show');
+  });
+
+  fechar.addEventListener('click', () => {
+    modal_container.classList.remove('show');
+  });
+</script>
+
+<script>
+  function calculate() {
+    // Determina variáveis correspondentes aos valores recebidos.
+
+    var temperatura = (in_temperatura.value);
+    var envelhecimento = (in_envelhecimento.value);
+    var tipo = sel_tipoDeVinho.value;
+    var perda = (in_perda.value);
+    var safra = (in_safra.value);
+    // Determina os textos possíveis.
+
+    var value011 = ((3 * temperatura) / 2);
+    var value012 = ((5 * temperatura) / 2);
+    var value013 = ((9 * temperatura) / 2);
+    var value014 = ((7 * temperatura) / 2);
+    var value015 = ((6 * temperatura) / 2);
+
+    var value02 = parseInt((perda / safra) * 100);
+    // Lógica: (idade/ (temperatura/valor equivalente aos anos que levará par ser incosumível)) 
+
+    // Var value03 se baseia na fragíllidade do tipo de vinho, com 10 sendo um vinho muito frágil e 1, um vinho muito resistente.
+
+    var perdaDeVinho = (perda / 2);
+    // Lógica: (perda atual/) = diminuição em no minimo, 50%.
+
+    var text011 = `<mark>Seu potencial de envelhecimento e agregação de valor de ${envelhecimento} anos, pode ser danificado em ${value02}%, com o produto expirando após ${value011} anos, devido ao mau-armazenamento. Sua perda poderá ser reduzida para apenas ${perdaDeVinho} garrafas, se armazenado corretamente.</mark>`
+    var text012 = `<mark>Seu potencial de envelhecimento e agregação de valor de ${envelhecimento} anos, pode ser danificado em ${value02}%, com o produto expirando após ${value012} anos, devido ao mau-armazenamento. Sua perda poderá ser reduzida para apenas ${perdaDeVinho} garrafas, se armazenado corretamente.</mark>`
+    var text013 = `<mark>Seu potencial de envelhecimento e agregação de valor de ${envelhecimento} anos, pode ser danificado em ${value02}%, com o produto expirando após ${value013} anos, devido ao mau-armazenamento. Sua perda poderá ser reduzida para apenas ${perdaDeVinho} garrafas, se armazenado corretamente.</mark>`
+    var text014 = `<mark>Seu potencial de envelhecimento e agregação de valor de ${envelhecimento} anos, pode ser danificado em ${value02}%, com o produto expirando após ${value014} anos, devido ao mau-armazenamento. Sua perda poderá ser reduzida para apenas ${perdaDeVinho} garrafas, se armazenado corretamente.</mark>`
+    var text015 = `<mark>Seu potencial de envelhecimento e agregação de valor de ${envelhecimento} anos, pode ser danificado em ${value02}%, com o produto expirando após ${value015} anos, devido ao mau-armazenamento. Sua perda poderá ser reduzida para apenas ${perdaDeVinho} garrafas, se armazenado corretamente.</mark>`
+
+    var text021 = `<mark>Seu produto está sendo armazenado abaixo do ideal, o que pode acarretar no retardamento do envelhecimento, ou estragamento do vinho em ${parseInt(((temperatura / envelhecimento) / 3) * 2)} meses.</mark>`
+    var text022 = `<mark>Seu produto está sendo armazenado abaixo do ideal, o que pode acarretar no retardamento do envelhecimento, ou estragamento do vinho em ${parseInt(((temperatura / envelhecimento) / 5) * 2)} meses.</mark>`
+    var text023 = `<mark>Seu produto está sendo armazenado abaixo do ideal, o que pode acarretar no retardamento do envelhecimento, ou estragamento do vinho em ${parseInt(((temperatura / envelhecimento) / 9) * 2)} meses.</mark>`
+    var text024 = `<mark>Seu produto está sendo armazenado abaixo do ideal, o que pode acarretar no retardamento do envelhecimento, ou estragamento do vinho em ${parseInt(((temperatura / envelhecimento) / 7) * 2)} meses.</mark>`
+    var text025 = `<mark>Seu produto está sendo armazenado abaixo do ideal, o que pode acarretar no retardamento do envelhecimento, ou estragamento do vinho em ${parseInt(((temperatura / envelhecimento) / 6) * 2)} meses.</mark>`
+
+
+    var text03 = `<mark>Seu produto está armazenado corretamente.</mark>`
+    var text04 = `<mark>Seu produto irá estragar, devido ao armazenamento por mais tempo do que o nescessário.</mark>`
+    var text05 = `<mark>Seu produto não alcançará todo o seu potêncial, devido ao armazenamento por menos tempo do que o nescessário.</mark>`
+    // Determina as contas e valores nulos.
+
+    if (envelhecimento <= 0) {
+      div_perda.innerHTML = `Informe anos superior a 0.`
+    } else if (temperatura < 0) {
+      div_perda.innerHTML = `Informe uma temperatura superior a 0ºC e inferior a 50ºC.`
+    } else if (tipo == 'selSel') {
+      div_perda.innerHTML = `Selecione um tipo de vinho válido.`
+
+    } else if (tipo == 'vinhoTinto') {
+
+      if (envelhecimento <= 3) {
+        div_perda.innerHTML = `${text05}`
+
+      } else if (envelhecimento >= 4) {
+
+        if (temperatura < 12) {
+          div_perda.innerHTML = `${text021}`
+        }
+
+        if (temperatura >= 13 && temperatura <= 17) {
+          div_perda.innerHTML = `${text03}`
+        }
+
+        if (temperatura >= 18) {
+          div_perda.innerHTML = `${text011}`
+        } 1
+
+      }
+
+    } else if (tipo == 'vinhoBranco') {
+
+      if (envelhecimento <= 3) {
+        div_perda.innerHTML = `${text05}`
+
+      } else if (envelhecimento <= 20) {
+
+        if (temperatura < 10) {
+          div_perda.innerHTML = `${text022}`
+        }
+
+        if (temperatura >= 10 && temperatura <= 12) {
+          div_perda.innerHTML = `${text03}`
+        }
+
+        if (temperatura >= 13) {
+          div_perda.innerHTML = `${text012}`
+        }
+
+      } else {
+        div_perda.innerHTML = `${text04}`
+      }
+
+    } else if (tipo == 'vinhoVerde') {
+
+      if (envelhecimento <= 1) {
+        div_perda.innerHTML = `${text05}`
+
+      } else if (envelhecimento <= 3) {
+
+        if (temperatura < 12) {
+          div_perda.innerHTML = `${text023}`
+        }
+
+        if (temperatura >= 12 && temperatura <= 14) {
+          div_perda.innerHTML = `${text03}`
+        }
+
+        if (temperatura >= 15) {
+          div_perda.innerHTML = `${text013}`
+        }
+
+      }
+      else {
+        div_perda.innerHTML = `${text04}`
+      }
+
+    } else {
+
+
+      if (tipo == 'vinhoRose') {
+
+        if (envelhecimento <= 1) {
+          div_perda.innerHTML = `${text05}`
+
+        } else if (envelhecimento <= 3) {
+
+          if (temperatura < 14) {
+            div_perda.innerHTML = `${text024}`
+          }
+
+          if (temperatura >= 14 && temperatura <= 18) {
+            div_perda.innerHTML = `${text03}`
+          }
+
+          if (temperatura >= 19) {
+            div_perda.innerHTML = `${text014}`
+          }
+
+        }
+        else {
+          div_perda.innerHTML = `${text04}`
+        }
+
+      } else if (tipo == 'espumantes') {
+
+        if (envelhecimento <= 1) {
+          div_perda.innerHTML = `${text05}`
+
+        } else if (envelhecimento <= 15) {
+
+          if (temperatura < 14) {
+            div_perda.innerHTML = `${text025}`
+          }
+
+          if (temperatura >= 14 && temperatura <= 20) {
+            div_perda.innerHTML = `${text03}`
+          }
+
+          if (temperatura >= 21) {
+            div_perda.innerHTML = `${text015}`
+          }
+
+        }
+        else {
+          div_perda.innerHTML = `${text04}`
+        }
+
+      }
+
+    }
+
+  }
+</script>

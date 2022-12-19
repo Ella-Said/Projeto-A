@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+    <link href="Style02.css" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="../assets/Imagens/uvasensor.png">
+    <title>VINHO VERDE | PurpleTech</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="../assets/Imagens/logo.png" style="height: 70px; width: 80px; margin: 2px" class="logo" alt="logo" onclick="home()" href="../public/index.html">
+        <nav class="menu">
+            <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="login.html">Login</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="cadastro.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="faleConosco.html">Fale Conosco</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="sobreNos.html">Sobre nós</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="simulador.html" class="button01">SIMULADOR</a>
+        </nav>
+    </header>
+
+    <section class="sobre">
+        <div class="extras" style="background-color: #7EB35C;">
+            <img class="correction" src="../assets/Imagens/vinhoPorta.png">
+        </div>
+        <div class="centerVinho">
+            <div class="textoVinho"><h1>
+                <span
+                    style="color: #7EB35C; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Leve
+                    e Refrescante</span><br>Assim como a vida deve ser
+            </h1>
+            <p>
+                A nomenclatura Vinho Verde está relacionada ao local de origem da bebida e não à sua cor. <mark
+                    class="mark05">Ela é produzida no noroeste de Portugal</mark>, integrando as 31 Denominações de
+                Origem Controlada (DOC) do país. Chamada de Minho, a região tem terroir e condições climáticas bem
+                diversas do restante do país.
+
+            </p>
+            <p>
+                A relevância do produto para a economia portuguesa é tamanha que, no começo do século XX, foi
+                estabelecida a Região Demarcada dos Vinhos Verdes. <mark class="mark05">Ela vai da margem do rio
+                    Minho, ao norte de Portugal, na fronteira com a Espanha, até o rio Douro, mais ao sul</mark>.
+            </p>
+            <p>
+                A relevância do produto para a economia portuguesa é tamanha que, no começo do século XX, foi estabelecida  a Região Demarcada dos Vinhos Verdes. Ela vai da margem do rio Minho, ao norte de Portugal, na fronteira com a Espanha, até o rio Douro, mais ao sul. Historicamente, diz-se que esse foi o primeiro vinho português exportado para os mercados europeus. <mark class="mark05">Sua temperatura ideal de armazenamento é entre 12ºC e 14ºC, de 1 a 3 anos.</mark>
+            </p>
+                <button onclick="home()" class="button03"
+                    style="background-color: #7EB35C; box-shadow: 0 0 0 0px white, 0 0 0 2px #7EB35C, 0 2px 4px rgba(0,0,0,0.2);">
+                    Voltar
+                </button>&nbsp;&nbsp;&nbsp;
+                <button class="button03"
+                    style="background-color: #7EB35C; box-shadow: 0 0 0 0px white, 0 0 0 2px #7EB35C, 0 2px 4px rgba(0,0,0,0.2);"
+                    id="abrir">
+                    Tipos de Vinho
+                </button>
+                <br>
+                <div id="modal_container" class="modal_container">
+                    <div class="modal">
+                        <h2>Selecione o tipo de vinho</h2>
+                        <h2></h2>
+                        <p>
+                            <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
+                                <option value="selSel">Selecione o tipo de vinho</option>
+                                <option value="vinhoTinto.html">Vinho Tinto</option>
+                                <option value="vinhoBranco.html">Vinho Branco</option>
+                                <option value="vinhoVerde.html">Vinho Verde</option>
+                                <option value="vinhoRose.html">Vinho Rose</option>
+                                <option value="espumantes.html">Espumantes</option>
+                            </select>
+                        </p>
+
+                        <button class="button02" id="fechar">X</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="caixaDeTexto">
+            <br>
+            <p>PURPLE TECH - Todos os direitos reservados - 2022</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    const abrir = document.getElementById('abrir');
+    const modal_container = document.getElementById('modal_container');
+    const fechar = document.getElementById('fechar');
+
+    abrir.addEventListener('click', () => {
+        modal_container.classList.add('show');
+    });
+
+    fechar.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+</script>
+<script>
+    function home() {
+        window.location.href = "index.html"
+    }
+</script>

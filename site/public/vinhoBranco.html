@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0">
+    <link href="Style02.css" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="../assets/Imagens/uvasensor.png">
+    <title>VINHO BRANCO | PurpleTech</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="../assets/Imagens/logo.png" style="height: 70px; width: 80px; margin: 2px" class="logo" alt="logo" onclick="home()" href="../public/index.html">
+        <nav class="menu">
+            <a href="index.html">Home</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="login.html">Login</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="cadastro.html">Cadastro</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="faleConosco.html">Fale Conosco</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="sobreNos.html">Sobre nós</a>&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="simulador.html" class="button01">SIMULADOR</a>
+        </nav>
+    </header>
+
+    <section class="sobre">
+        <div class="extras" style="background-color: #B89969;">
+            <img class="correction" src="../assets/Imagens/vinhoVarello.png">
+        </div>
+        <div class="centerVinho">
+            <div class="textoVinho">
+                <h1>
+                    <span
+                        style="color: #B89969; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Tradicional
+                        e moderno</span><br>Assim como a vida deve ser
+                </h1>
+                <p>
+                    O vinho branco, por ser um vinho tradicional e elegante, é uma pedida pro verão. <mark
+                        class="mark02">Caracteriza-se pela
+                        sua aromaticidade, remetendo a frutas cítricas ou, quando passa por tonéis de carvalho, pode ter
+                        toques de baunilha ou de noz-moscada, sua coloração é clara, levemente dourada.</mark>
+                </p>
+                <p>
+                    O vinho branco fica em segundo lugar, com 25% da preferência dos brasileiros. Para os vinhos do tipo
+                    branco, a primeira opção é a do tipo Chardonnay, mais conhecida como a "Rainha das uvas brancas".
+                    <mark class="mark02">A
+                        uva do tipo Sauvignon Blanc e Moscato, seguem na segunda e terceira posição,
+                        respectivamente.</mark>
+                </p>
+                <p>
+                    A maior parte da produção global deste vinho se concentra nos mediterrâneo e nos países do Cone
+                    Sul-americano. <mark class="mark02">Sua temperatura ideal de armazenamento é entre 10ºC e 12ºC, de 3
+                        a 10 anos.</mark>
+                </p>
+                <button onclick="home()" class="button03"
+                    style="background-color: #B89969; box-shadow: 0 0 0 0px white, 0 0 0 2px #B89969, 0 2px 4px rgba(0,0,0,0.2);">
+                    Voltar
+                </button>&nbsp;&nbsp;&nbsp;
+                <button class="button03"
+                    style="background-color: #B89969; box-shadow: 0 0 0 0px white, 0 0 0 2px #B89969, 0 2px 4px rgba(0,0,0,0.2);"
+                    id="abrir">
+                    Tipos de Vinho
+                </button>
+                <br>
+                <div id="modal_container" class="modal_container">
+                    <div class="modal">
+                        <h2>Selecione o tipo de vinho</h2>
+                        <h2></h2>
+                        <p>
+                            <select class="select" id="sel_tipoDeVinho" onchange="location = this.value;">
+                                <option value="selSel">Selecione o tipo de vinho</option>
+                                <option value="vinhoTinto.html">Vinho Tinto</option>
+                                <option value="vinhoBranco.html">Vinho Branco</option>
+                                <option value="vinhoVerde.html">Vinho Verde</option>
+                                <option value="vinhoRose.html">Vinho Rose</option>
+                                <option value="espumantes.html">Espumantes</option>
+                            </select>
+                        </p>
+                        <button class="button02" id="fechar">X</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="caixaDeTexto">
+            <br>
+            <p>PURPLE TECH - Todos os direitos reservados - 2022</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script>
+    const abrir = document.getElementById('abrir');
+    const modal_container = document.getElementById('modal_container');
+    const fechar = document.getElementById('fechar');
+
+    abrir.addEventListener('click', () => {
+        modal_container.classList.add('show');
+    });
+
+    fechar.addEventListener('click', () => {
+        modal_container.classList.remove('show');
+    });
+</script>
+<script>
+    function home() {
+        window.location.href = "index.html"
+    }
+</script>

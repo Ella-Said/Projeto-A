@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.centerVinho {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+html, body {
+    background-color: #eeeeee;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+header {
+    margin: 0;
+  height: 13vh;
+  width: 100%;
+  display: flex;
+  align-items: left;
+  padding: 5px 0;
+  padding-bottom: 10px;
+  background-color: white;
+  flex-direction: row;
+  justify-content: space-around;
+  }
+
+
+.button01 {
+    padding: 5px;
+    border: 0;
+    background-color: #8646c5;
+    color: #e4e2e2 !important;
+    border-radius: 10px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 0 0px white, 0 0 0 2px #8646c5, 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition-duration: 2s;
+
+}
+
+.button01:hover {
+    background-color: #48147d;
+    color: white;
+    transform: scale(1.2)
+}
+
+.logo {
+    width: 50%;
+}
+
+.menu {
+    padding-top: 30px;
+    width: 90%;
+    text-align: right;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+section.sobre {
+    padding-top: 10%;
+    height: calc(100% - 200px);
+    position: relative;
+}
+
+.extras {
+    position: absolute;
+    bottom: -85vh;
+    right: -500px;
+    width: 950px;
+    height: 950px;
+    border-radius: 50%;
+} 
+
+.correction {
+    bottom: 80%;
+    right: 100%;
+    width: 50%;
+    height: 50%;
+}
+
+.textoVinho h1 {
+    margin-top: -70px;
+    font-size: 40px;
+}
+
+.textoVinho p {
+    margin-top: 0;
+    margin: 15px 0;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    max-width: 800px;
+}
+
+.button03 {
+    border: 0;
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.caixaDeTexto {
+    text-align: center;
+    margin: 0vh 20vh;
+}
+
+footer {
+    margin-top: 5vh;
+    position: relative;
+    height: 10vh;
+    padding: 20px 0px;
+    padding-bottom: 30px;
+    background-color: #ffffff00;
+    color: black;
+    align-self: auto;
+}
+.mark01 {
+    -moz-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -o-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+    animation: 1.5s highlight 1.5s 1 normal forwards;
+    background-color: none;
+    background: linear-gradient(90deg, #BBC56D 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+}
+
+.mark02 { 
+    -moz-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -o-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+    animation: 1.5s highlight 1.5s 1 normal forwards;
+    background-color: none;
+    background: linear-gradient(90deg, #B89969 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+}
+
+.mark03 {
+    -moz-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -o-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+    animation: 1.5s highlight 1.5s 1 normal forwards;
+    background-color: none;
+    background: linear-gradient(90deg, #FF7670 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+}
+
+.mark04 {
+    -moz-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -o-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+    animation: 1.5s highlight 1.5s 1 normal forwards;
+    background-color: none;
+    background: linear-gradient(90deg, #7d41b9 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+}
+
+.mark05 {
+    -moz-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -o-animation: 1.5s highlight 1.5s 1 normal forwards;
+    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+    animation: 1.5s highlight 1.5s 1 normal forwards;
+    background-color: none;
+    background: linear-gradient(90deg, #7EB35C 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+}
+
+@-webkit-keyframes highlight {
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes highlight {
+    to {
+        background-position: 0 0;
+    }
+}
+
+
+select {
+    border-radius: 10px 0px 10px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 2px solid white;
+    box-shadow: 0 0 0 0px white, 0 0 0 2px #8646c5, 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 50;
+}
+
+.modal_container.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    background-color: white;
+    width: 600px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.modal h1 {
+    margin: 0;
+}
+
+.modal p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.button {
+    background-color: #8646c5;
+    color: white;
+    border-radius: 10px;
+    width: 130px;
+    height: 35px;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 0 0px white, 0 0 0 2px #8646c5, 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition-duration: 2s;
+}
+
+.button:hover {
+    background-color: #8646c5;
+    color: white;
+    transform: scale(1.1)
+}
+
+.button02 {
+    position: absolute;
+    margin-top: -145px;
+    margin-left: 280px;
+    background-color: #8646c5;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    border-radius: 40px;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    border-style: hidden;
+    box-shadow: 2px 2px 2px rgb(189, 188, 188);
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.button02:hover {
+    background: white;
+    color: #8646c5;
+    border: 1px solid #eee;
+    border-radius: 40px;
+    box-shadow: 2px 2px 2px rgb(189, 188, 188);
+}
