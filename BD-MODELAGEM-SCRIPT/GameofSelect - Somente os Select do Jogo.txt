@@ -1,0 +1,33 @@
+SELECT * FROM equipe;
+SELECT * FROM treinador;
+SELECT * FROM pokemon;
+SELECT * FROM batalha;
+
+-- SELECIONE SOMENTE A EQUIPE DO ASH
+SELECT nomeEquipe, nomeTreinador FROM Equipe JOIN Treinador ON fkEquipe = idEquipe WHERE fkEquipe = 10;
+-- SELECIONE APENAS A COLUNA COM O NOME DO TREINADOR QUE TEM COMO 4° LETRA V
+SELECT nomeTreinador FROM Treinador WHERE nomeTreinador LIKE '___v%';
+-- Selecione o Nome do Treinador, Nome do Pokemon e o Tipo de Pokemon ordenados pelo Tipo de Pokemon em ordem Crescente
+SELECT nomeTreinador, nomePokemon, tipoPokemon FROM Treinador JOIN Pokemon ON fkTreinador = idTreinador ORDER BY tipoPokemon ASC;
+-- Selecione Nome do Pokemon e Poder do Pokemon maiores de 100
+SELECT nomePokemon, poderPokemon FROM Pokemon WHERE poderPokemon > 100;
+-- Selecione o nome do treinador e o momento da batalha de tod
+SELECT nomePokemon, momento FROM Pokemon LEFT JOIN Batalha ON fkPokemon1 = idPokemon;
+-- Faça uma atualização na tabela Batalha onde o idBatalha é 203 com a data e hora do momento
+UPDATE Batalha SET momento = '2022-06-14 12:00:00' WHERE idBatalha = 203;
+-- Selecione o nome do Pokemon, seu poder onde o tipo dele é Pedra
+SELECT nomePokemon, poderPokemon FROM Pokemon WHERE tipoPokemon = 'Pedra';
+-- Selecione todos os Pokemons que contenha u no nome
+SELECT * FROM Pokemon WHERE nomePokemon LIKE '%u%';
+-- Selecione some nome da Equipe e nome do Treinador, mas somente da Equipe Rocket
+SELECT nomeEquipe, nomeTreinador FROM Equipe JOIN Treinador ON fkEquipe = idEquipe WHERE nomeEquipe = 'Equipe Rocket';
+-- Selecione a tabela Btalha onde a fk dos Pokemons são 108 e 109, não utilize o between
+SELECT * FROM Batalha WHERE fkPokemon1 AND fkPokemon2 IN (108 , 109);
+-- Selecione nome do Treinador, Pokemon o tipo do Pokemon e o Poder, mas somente do treinador 1
+SELECT nomeTreinador, nomePokemon, tipoPokemon, poderPokemon FROM Treinador JOIN Pokemon ON fkTreinador = idTreinador AND fkTreinador = 1;
+-- Mostre qual a média dos poderes na tabela Pokemon dando um nome para a coluna
+SELECT TRUNCATE(AVG(poderPokemon), 0) AS 'Média de Poderes' FROM Pokemon;
+-- Mostre quantos pokemons estão cadastrados 
+SELECT COUNT(nomePokemon) AS 'Total de Pokemons' FROM Pokemon;
+-- Selecione toda a tabela Pokemon onde o idPokemon está entre 102 e 110
+SELECT * FROM Pokemon WHERE idPokemon BETWEEN 102 AND 110;
